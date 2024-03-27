@@ -1,0 +1,28 @@
+{
+  "name": "yaya",
+  "version": "1.0.0",
+  "description": "yaya",
+  "main": "index.cjs",
+  "type": "module",
+  "engines": {
+    "node": "16.x"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node index.cjs",
+    "register": "node commands.js"
+  },
+  "author": "Me",
+  "dependencies": {
+    "discord-interactions": "^3.2.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "node-fetch": "^3.3.0",
+    "@discordjs/core": "^1.1.1",
+		"@discordjs/rest": "^2.2.0",
+    "@types/node": "^20.10.2",
+    "common-tags": "^1.8.2",
+    "@discordjs/ws": "^1.0.2",
+		"@types/common-tags": "^1.8.4"
+  }
+}
