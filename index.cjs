@@ -101,6 +101,8 @@ client.on(GatewayDispatchEvents.InteractionCreate, async ({ data: interaction, a
             owo += String.fromCharCode(parseInt(byte, 2));
         }
         respond({ content: owo, flags: 64});
+    } else if (interaction.data.name === "add") {
+        respond({ content: `Go on.. [use me~](https://discord.com/oauth2/authorize?client_id=${interaction.application_id})` }); //change this to real link
     }
     
 });
