@@ -33,9 +33,18 @@ const ZAZA_COMMAND = {
     contexts: [0, 1, 2],
 }
 
+const INVITE = {
+    name: 'add',
+    type: 1,
+    description: 'Add me~',
+    integration_types: [0, 1],
+    contexts: [0, 1, 2],
+}
+
 const ALL_COMMANDS = [
     YAYA_COMMAND,
-    ZAZA_COMMAND
+    ZAZA_COMMAND,
+    INVITE
 ]
 
 InstallGlobalCommands(process.env.APP_ID, ALL_COMMANDS);
