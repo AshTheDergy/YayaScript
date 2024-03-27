@@ -51,6 +51,11 @@ client.on(GatewayDispatchEvents.InteractionCreate, async ({ data: interaction, a
 
     if (interaction.data.name === "yaya") {
         const wuhh = option('text');
+        if (!wuhh) {
+            respond({ content: `Guhh?? empty!`, flags: 64});
+            return;
+        }
+
         const binary = wuhh.split('').map(char => char.charCodeAt(0).toString(2).padStart(8, '0')).join('');
         let guhh = '', i = 0;
         while (i < binary.length) {
@@ -67,9 +72,21 @@ client.on(GatewayDispatchEvents.InteractionCreate, async ({ data: interaction, a
         }
 
         respond({ content: guhh.trim(), flags: 64});
-        
+
     } else if (interaction.data.name === "zaza") {
         const wuhh = option('text');
+
+        const validWords = secrets.map(secret => secret[1].trim());
+        const words = wuhh.split(' ').filter(Boolean);
+
+        for (const word of words) {
+            if (!validWords.includes(word)) {
+                respond({ content: `Guhh?? Nuh uh!@!`, flags: 64});
+                return;
+            }
+        }
+
+
         let binary = wuhh.split(' ').reduce((mreow, mrrp) => {
             for (let [binary, secret] of secrets) {
                 if (mrrp + ' ' === secret) {
