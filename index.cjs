@@ -31,10 +31,22 @@ client.on(GatewayDispatchEvents.InteractionCreate, async ({ data: interaction, a
         ['00100001', ':D '],
         ['00101100', 'but... '],
         ['00111111', 'wah.. '],
-        ['00', 'yaya '],
-        ['01', 'wuhh '],
-        ['10', 'helo '],
-        ['11', 'hru ']
+        ['0000', 'yaya '],
+        ['0001', 'o '],
+        ['0010', 'wawa '],
+        ['0011', 'wuhh '],
+        ['0100', 'wah '],
+        ['0101', 'hi '],
+        ['0110', 'helo '],
+        ['0111', 'hai '],
+        ['1000', 'gm '],
+        ['1001', 'gn '],
+        ['1010', 'hru '],
+        ['1011', 'idk '],
+        ['1100', '? '],
+        ['1101', 'oh '],
+        ['1110', 'STFU '],
+        ['1111', 'undertale ']
     ];
 
     if (interaction.data.name === "yaya") {
@@ -54,7 +66,8 @@ client.on(GatewayDispatchEvents.InteractionCreate, async ({ data: interaction, a
             if (!yuhuh) i++;
         }
 
-        respond({ content: guhh.trim(), ephemeral: true });
+        respond({ content: guhh.trim(), flags: 64});
+        
     } else if (interaction.data.name === "zaza") {
         const wuhh = option('text');
         let binary = wuhh.split(' ').reduce((mreow, mrrp) => {
@@ -70,7 +83,7 @@ client.on(GatewayDispatchEvents.InteractionCreate, async ({ data: interaction, a
             let byte = binary.slice(i, i + 8);
             owo += String.fromCharCode(parseInt(byte, 2));
         }
-        respond({ content: owo, ephemeral: true });
+        respond({ content: owo, flags: 64});
     }
     
 });
