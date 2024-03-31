@@ -1,6 +1,7 @@
 import 'dotenv/config';
 import { InstallGlobalCommands } from './func.js';
 
+// UI commands
 const YAYA_COMMAND = {
     name: 'yaya',
     type: 1,
@@ -41,10 +42,26 @@ const INVITE = {
     contexts: [0, 1, 2],
 }
 
+// APPS cummands
+/*const MESSAGE_CONTEXT_MENU = {
+    name: 'Test',
+    type: 3,
+    integration_types: [0, 1],
+    contexts: [0, 1, 2],
+};*/
+
+const ZAZA_APP = {
+    name: 'Zaza',
+    type: 3, 
+    integration_types: [0, 1],
+    contexts: [0, 1, 2],
+}
+
 const ALL_COMMANDS = [
     YAYA_COMMAND,
     ZAZA_COMMAND,
-    INVITE
+    INVITE,
+    ZAZA_APP
 ]
 
 InstallGlobalCommands(process.env.APP_ID, ALL_COMMANDS);
