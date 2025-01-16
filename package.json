@@ -4,9 +4,6 @@
   "description": "yaya",
   "main": "index.cjs",
   "type": "module",
-  "engines": {
-    "node": "16.x"
-  },
   "scripts": {
     "build": "tsc",
     "start": "node index.cjs",
